@@ -2,12 +2,12 @@ import { CardInterface } from "../../lib/data";
 
 const LimitationCard = ({ img, title, description }: CardInterface) => {
   return (
-    <div className="grid gap-4 drop-shadow-[16px_32px_56px_rgb(143,174,207,25%)] bg-white p-6 rounded-2xl">
-      <div className="flex gap-4">
+    <div className="grid h-full w-full content-start gap-4 rounded-2xl bg-white p-6 drop-shadow-[16px_32px_56px_rgb(143,174,207,25%)] md:col-span-2 last-of-type:col-start-2 md:p-8">
+      <div className="flex h-fit items-center gap-x-4">
         <img src={img} alt={title} />
-        <div className="text-xl text-[#253347] font-semibold">{title}</div>
+        <div className="text-xl font-semibold text-[#253347]">{title}</div>
       </div>
-      <div className="text-[#5E6E85]">{description}</div>
+      <div className="h-full text-[#5E6E85]">{description}</div>
     </div>
   );
 };

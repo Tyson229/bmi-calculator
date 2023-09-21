@@ -1,9 +1,9 @@
 const YourResult = () => {
   return (
-    <div className="font-sans grid gap-12">
-      <img src="/src/assets/image-man-eating.webp" />
+    <div className="grid gap-12 md:grid-cols-2 md:relative items-center">
+      <img src="/src/assets/image-man-eating.webp" className="md:relative md:-translate-x-12"/>
       <div className="grid gap-8 p-6">
-        <div className="text-4xl font-semibold text-[#253347]">
+        <div className="text-[32px] font-semibold text-[#253347]">
           What your BMI result means
         </div>
         <p className="text-[#5E6E85]">

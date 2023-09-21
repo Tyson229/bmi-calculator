@@ -7,7 +7,7 @@ export const Limitations = () => {
         <div className="text-center text-4xl font-semibold text-[#253347]">
           Limitations of BMI
         </div>
-        <div className="text-[#5E6E85]">
+        <div className="text-[#5E6E85] text-center">
           Although BMI is often a practical indicator of healthy weight, it is
           not suited for every person. Specific groups should carefully consider
           their BMI outcomes, and in certain cases, the measurement may not be
