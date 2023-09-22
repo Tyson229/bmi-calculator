@@ -1,20 +1,7 @@
-import List from "./List";
-
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import LimitationsDesktop from "./LimitationsDesktop";
+import LimitationsMobile from "./LimitationsMobile";
 export const Limitations = () => {
-  return (
-    <div className="grid p-6 gap-14 mb-24">
-      <div className="grid gap-8">
-        <div className="text-center text-4xl font-semibold text-[#253347]">
-          Limitations of BMI
-        </div>
-        <div className="text-[#5E6E85] text-center">
-          Although BMI is often a practical indicator of healthy weight, it is
-          not suited for every person. Specific groups should carefully consider
-          their BMI outcomes, and in certain cases, the measurement may not be
-          beneficial to use.
-        </div>
-      </div>
-      <List/>
-    </div>
-  );
-}
+  const { width } = useWindowDimensions();
+  return width < 1024 ? <LimitationsMobile /> : <LimitationsDesktop />;
+};
