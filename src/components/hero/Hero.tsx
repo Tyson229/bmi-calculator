@@ -1,18 +1,17 @@
-import { Fragment } from "react";
 import Background from "./Background";
 import BMIBox from "./bmi-box/BMIBox";
 
 const Hero = () => {
   return (
-    <section className="relative grid h-full w-full max-w-screen-xl place-items-center gap-8 px-6 pt-8 md:px-11 md:pb-0 md:pt-11 lg:flex lg:flex-wrap lg:px-0 lg:mb-10">
+    <section className="relative flex w-full max-w-screen-xl flex-col gap-y-10 pt-12 lg:h-[70vh]">
       <Background />
-
-      <img src="src/assets/logo.svg" className="z-10" />
-
-      <div className="flex gap-8">
-        <div className="z-10 flex flex-col gap-6 text-center lg:text-start">
-          <h1 className="text-6xl font-bold text-[#253347] ">
-            Body Mass Index Calculator
+      <div className="z-10 grid place-items-center lg:place-items-start lg:px-10">
+        <img src="src/assets/logo.svg" />
+      </div>
+      <div className="grid h-full  place-items-start gap-8 px-10 lg:grid-cols-2">
+        <div className="z-10 flex w-full flex-col gap-6 text-center lg:mt-12 lg:text-start">
+          <h1 className="text-6xl font-bold text-[#253347]">
+            Body Mass <br /> Index Calculator
           </h1>
           <p className="text-[#5E6E85] ">
             Better understand your weight in relation to your height using our

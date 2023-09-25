@@ -1,24 +1,31 @@
+import { useSelector } from "react-redux";
 import InputBox from "./InputBox";
 
-interface InputContainerProps {
-    label : string
-    isMetric: boolean
-}
+const InputContainer = () => {
+  const isMetric = useSelector(
+    (state: { isMetric: boolean }) => state.isMetric,
+  );
 
-const InputContainer = ({label, isMetric} :InputContainerProps) => {
-  return (
-    <div className="grid gap-2">
-      <label className="text-[#5E6E85] first-letter:uppercase">{label}</label>
-      {isMetric ? (
-        <InputBox digit={label === "height" ? "cm" : "kg"} />
-      ) : (
-        <div className="grid grid-cols-2 gap-4">
-          <InputBox digit={label === "height" ? "ft" : "st"} />
-          <InputBox digit={label === "height" ? "in" : "lbs"} />
-        </div>
-      )}
+  const generateFields = (label: string, fields: string[]) => (
+    <div className="grid w-full">
+      <span className="text-[#5E6E85] first-letter:uppercase">{label}</span>
+      <div className={`grid ${fields.length > 1 ? "grid-cols-2" : ""} gap-4`}>
+        {fields.map((field) => (
+          <InputBox key={field} digit={field} name={field} id={field} />
+        ))}
+      </div>
     </div>
   );
-}
 
-export default InputContainer
+  const heightFields = isMetric ? ["cm"] : ["ft", "in"];
+  const weightFields = isMetric ? ["kg"] : ["st", "lbs"];
+
+  return (
+    <div className={`grid ${isMetric ? "md:grid-cols-2" : ""} gap-2`}>
+      {generateFields("height", heightFields)}
+      {generateFields("weight", weightFields)}
+    </div>
+  );
+};
+
+export default InputContainer;
