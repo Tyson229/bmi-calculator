@@ -1,11 +1,16 @@
+import CurvyLineLeft from "../../assets/pattern-curved-line-left.svg";
+import ManEating from "../../assets/image-man-eating.webp";
 const YourResult = () => {
   return (
     <div className="grid w-full max-w-screen-xl items-center gap-12 md:relative md:grid-cols-2 md:gap-8 lg:gap-28">
       <img
-        src="/src/assets/image-man-eating.webp"
+        src={ManEating}
         className="md:relative md:-translate-x-12 lg:translate-x-0"
       />
-      <img src="src/assets/pattern-curved-line-left.svg" className="hidden lg:block absolute -top-10 right-3" />
+      <img
+        src={CurvyLineLeft}
+        className="absolute -top-10 right-3 hidden lg:block"
+      />
 
       <div className="mx-6 mb-[4.5rem] mt-12 grid gap-8 md:mx-11 lg:mx-10">
         <div className="text-[32px] font-semibold text-[#253347]">
@@ -20,7 +25,6 @@ const YourResult = () => {
             week.
           </p>
         </div>
-        
       </div>
     </div>
   );
